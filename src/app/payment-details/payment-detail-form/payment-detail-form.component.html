@@ -1,0 +1,33 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="PayeurId" [value]="service.formData.PayeurId" />
+    <div class="form-group">
+        <label>Num Payeur</label>
+        <input class="form-control form-control-lg" placeholder="4 Digit Card Number" name="cardNumber"
+            #cardNumber="ngModel" [(ngModel)]="service.formData.cardNumber"
+             >
+    </div>
+    <div class="form-group">
+        <label>Nom Payeur</label>
+        <input class="form-control form-control-lg" placeholder="Full Name" name="cardOwnerName"
+            #cardOwnerName="ngModel" [(ngModel)]="service.formData.cardOwnerName"
+            >
+    </div>
+    
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Numero Tel</label>
+            <input  class="form-control form-control-lg"  name="Phone"
+                #Phone="ngModel" [(ngModel)]="service.formData.Phone"
+                >
+        </div>
+        <div class="form-group col-md-6">
+            <label>Email</label>
+            <input class="form-control form-control-lg"  name="Email"
+                #Email="ngModel" [(ngModel)]="service.formData.Email"
+                >
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+</form>

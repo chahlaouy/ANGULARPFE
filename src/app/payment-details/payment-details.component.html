@@ -1,0 +1,35 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Fiche Payeur</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-payment-detail-form></app-payment-detail-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Num</th>
+                    <th>Nom</th>
+                    <th>Numero tel</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pd of service.list">
+                    <td (click)="populateForm(pd)">{{pd.cardNumber}}</td>
+                    <td (click)="populateForm(pd)">{{pd.cardOwnerName}}</td>
+                    <td (click)="populateForm(pd)">{{pd.Phone}}</td>
+                    <td (click)="populateForm(pd)">{{pd.Email}}</td>
+                    
+                    
+                    <td>
+                        <button  (click)="onDelete(pd.PayeurId)"><img src="/assets/img/delete.png"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
